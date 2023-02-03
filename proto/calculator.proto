@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package calculator;
+
+service Calculator {
+  rpc Multiply(stream CalculatorRequest) returns (stream CalculatorResponse) {}
+}
+
+message CalculatorRequest {
+  int32 value = 1;
+}
+
+message CalculatorResponse {
+  int32 result = 1;
+}
